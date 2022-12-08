@@ -101,7 +101,7 @@ struct Line : public sf::Drawable
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 800), "Fuzzycs!");
+	sf::RenderWindow window(sf::VideoMode(800, 800), "Fuzzycs!");
 	window.setFramerateLimit(60);
 	Operator op;
 	Switch sw;
@@ -112,14 +112,14 @@ int main()
 	Component* dragging = nullptr;
 	v2 draggingOffset;
 
-    while (window.isOpen())
-    {
+	while (window.isOpen())
+	{
 		sf::Vector2i mousePosInt = sf::Mouse::getPosition(window);
 		v2 mousePos = {(float) mousePosInt.x, (float) mousePosInt.y};
 
-        sf::Event event{};
-        while (window.pollEvent(event))
-        {
+		sf::Event event{};
+		while (window.pollEvent(event))
+		{
 			if (event.type == sf::Event::Closed)
 			{
 				window.close();
@@ -140,7 +140,7 @@ int main()
 			else if (event.type == sf::Event::MouseButtonPressed && sw.GetBounds().contains(mousePos)
 				&& event.mouseButton.button == sf::Mouse::Right)
 				sw.Toggle();
-        }
+		}
 
 		if (dragging)
 		{
@@ -148,12 +148,12 @@ int main()
 			ln = Line(op.GetAnchor1(), sw.GetAnchor());
 		}
 
-        window.clear();
-        for (auto c : components)
+		window.clear();
+		for (auto c : components)
 			window.draw(*c);
 		window.draw(ln);
-        window.display();
-    }
+		window.display();
+	}
 
-    return 0;
+	return 0;
 }
