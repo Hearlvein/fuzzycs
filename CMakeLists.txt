@@ -4,7 +4,7 @@ project(fuzzycs)
 set(CMAKE_CXX_STANDARD 17)
 set(SFML_DIR C:/dev/SFML-2.5.1-mingw32-7.3.0/lib/cmake/SFML)
 set(SOURCE_FILES
-        main.cpp)
+        main.cpp Operator.hpp Component.hpp Switch.hpp Line.hpp)
 
 include_directories(
         C:/dev/SFML-2.5.1-mingw32-7.3.0/include)
